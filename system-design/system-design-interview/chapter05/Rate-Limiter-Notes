@@ -1,0 +1,29 @@
+DoS : Denial of Service
+
+Main Algorithms:
+Token bucket based Rate limiter (user in Amazon) - Token are added in regular internvals
+Leaky bucket 
+Fixed window - Request in a particular time (2 requests in 1 second allowed)
+Sliding Window - 
+Sliding Window Counter (
+Most used Rate limiter algorithm:
+the "sliding window" algorithm is generally considered the most adaptable, as it dynamically adjusts to changing traffic patterns by continuously updating a time window, allowing for more fluid control compared to fixed window approaches. 
+Dynamic nature:
+Unlike fixed window algorithms, the sliding window constantly shifts its time frame, allowing it to react to fluctuations in request rates. 
+Smoothing out bursts:
+By considering recent requests within the sliding window, the algorithm can handle sudden traffic surges without completely blocking users. 
+
+
+How to mitigate DoS attacks on rate limiters:
+Robust algorithm selection:
+Choose a rate limiting algorithm that is resilient to burst traffic and can handle sudden spikes in requests, like the "sliding window" technique. 
+Distributed implementation:
+Deploy rate limiting across multiple servers to prevent a single point of failure and distribute the load. 
+IP blocking:
+Implement mechanisms to block malicious IP addresses that are identified as actively attempting DoS attacks. 
+Adaptive rate limiting:
+Utilize dynamic rate limiting based on real-time traffic patterns to adjust limits based on changing conditions. 
+Monitoring and alerting:
+Continuously monitor the rate limiter for suspicious activity and set up alerts to detect potential DoS attempts.  
+
+  
